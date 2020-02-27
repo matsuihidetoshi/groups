@@ -1,19 +1,22 @@
-type Task 
+type Rank
   @model 
   @auth(rules: [
-      {allow: groups, groups: ["Managers"], queries: null, mutations: [create, update, delete]},
-      {allow: groups, groups: ["Employees"], queries: [get, list], mutations: null}
+      {allow: groups, groups: ["Admin"], queries: [get, list], mutations: [create, update, delete]},
+      {allow: private, queries: [get, list], mutations: null}
     ])
 {
   id: ID!
-  title: String!
-  description: String
-  status: String
+  name: String!
+  score: Float!
 }
-type PrivateNote
+type Result
   @model
-  @auth(rules: [{allow: owner}])
+  @auth(rules: [
+      {allow: groups, groups: ["Admin"], queries: [get, list], mutations: null},
+      {allow: owner}
+    ])
 {
   id: ID!
-  content: String!
+  score: Float!
+  success: Int!
 }
