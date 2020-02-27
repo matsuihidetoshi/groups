@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "groups",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authgroups37f1e009",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
