@@ -4,12 +4,17 @@
     <div class="ranks-area">
       <div v-for="(rank, id) in ranks" v-bind:key="id">
         <div class="single-rank">
-          {{ rank.name }}
+          <span v-if="(id == 0)">👑</span>
+          <span v-else-if="(id == 1)">🥈</span>
+          <span v-else-if="(id == 2)">🥉</span>
+          {{ id + 1 }}位
+          {{ rank.name }}<br>{{ rank.score }}
         </div>
       </div>
     </div>
     <div id="chat-form">
       <input type="text" v-model="name" name="name" class="form" placeholder="Content"><br/>
+      <input type="number" step="0.01" v-model="score" name="score" class="form" placeholder="Score"><br/>
       <button class="submit" v-on:click="createRank()">Post</button>
     </div>
   </div>
@@ -27,7 +32,7 @@ export default {
   data () {
     return {
       name: "",
-      score: 99.9,
+      score: null,
       rank: null,
       ranks: [],
       owner: localStorage.getItem("CognitoIdentityServiceProvider.1lj20khom343b67ou6f3se7bg6.LastAuthUser"),
@@ -39,10 +44,11 @@ export default {
   },
   methods: {
     createRank: async function () {
-      if (this.name === "") return
+      if (this.name === "" || !this.score) return
       const rank = {name: this.name, score: this.score}
       try {
         this.name = ""
+        this.score = ""
         await API.graphql(graphqlOperation(createRank, {input: rank}))
       } catch (error) {
         error
