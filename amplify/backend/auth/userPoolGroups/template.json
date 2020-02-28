@@ -1,21 +1,21 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Parameters": {
-        "authgroups37f1e009UserPoolId": {
+        "authgroupsd42ccbefUserPoolId": {
             "Type": "String",
-            "Default": "authgroups37f1e009UserPoolId"
+            "Default": "authgroupsd42ccbefUserPoolId"
         },
-        "authgroups37f1e009IdentityPoolId": {
+        "authgroupsd42ccbefIdentityPoolId": {
             "Type": "String",
-            "Default": "authgroups37f1e009IdentityPoolId"
+            "Default": "authgroupsd42ccbefIdentityPoolId"
         },
-        "authgroups37f1e009AppClientID": {
+        "authgroupsd42ccbefAppClientID": {
             "Type": "String",
-            "Default": "authgroups37f1e009AppClientID"
+            "Default": "authgroupsd42ccbefAppClientID"
         },
-        "authgroups37f1e009AppClientIDWeb": {
+        "authgroupsd42ccbefAppClientIDWeb": {
             "Type": "String",
-            "Default": "authgroups37f1e009AppClientIDWeb"
+            "Default": "authgroupsd42ccbefAppClientIDWeb"
         },
         "AuthRoleArn": {
             "Type": "String"
@@ -39,23 +39,23 @@
     },
     "Resources": {
     
-        "adminGroup": {
+        "AdminGroup": {
           "Type" : "AWS::Cognito::UserPoolGroup",
           "Properties" : {
-              "GroupName" : "admin",
+              "GroupName" : "Admin",
               "Precedence" : 1,
               "RoleArn" : {
                 "Fn::GetAtt": [
-                    "adminGroupRole",
+                    "AdminGroupRole",
                     "Arn"
                 ]
               },
               "UserPoolId" : {
-                "Ref": "authgroups37f1e009UserPoolId"
+                "Ref": "authgroupsd42ccbefUserPoolId"
               } 
             }
         },
-        "adminGroupRole": {
+        "AdminGroupRole": {
             "Type": "AWS::IAM::Role",
             "Properties": {
                 "RoleName":{
@@ -63,9 +63,9 @@
                         "",
                         [
                           {
-                            "Ref": "authgroups37f1e009UserPoolId"
+                            "Ref": "authgroupsd42ccbefUserPoolId"
                           },
-                          "-adminGroupRole"
+                          "-AdminGroupRole"
                         ]
                     ]
                 },
@@ -100,7 +100,7 @@
                                 "",
                                 [
                                   
-                                  "groups37f1e009",
+                                  "groupsd42ccbef",
                                   "-ExecutionRole-",
                                   {
                                     "Ref": "env"
@@ -259,16 +259,16 @@
                     "Ref": "UnauthRoleArn"
                 },
                 "identityPoolId": {
-                    "Ref": "authgroups37f1e009IdentityPoolId"
+                    "Ref": "authgroupsd42ccbefIdentityPoolId"
                 },
                 "userPoolId": {
-                    "Ref": "authgroups37f1e009UserPoolId"
+                    "Ref": "authgroupsd42ccbefUserPoolId"
                 },
                 "appClientIDWeb": {
-                    "Ref": "authgroups37f1e009AppClientIDWeb"
+                    "Ref": "authgroupsd42ccbefAppClientIDWeb"
                 },
                 "appClientID": {
-                    "Ref": "authgroups37f1e009AppClientID"
+                    "Ref": "authgroupsd42ccbefAppClientID"
                 },
                 "region": {
                     "Ref": "AWS::Region"
@@ -282,10 +282,10 @@
     },
     "Outputs": {
       
-        "adminGroupRole": {
+        "AdminGroupRole": {
             "Value": {
                 "Fn::GetAtt": [
-                    "adminGroupRole",
+                    "AdminGroupRole",
                     "Arn"
                 ]
             }
