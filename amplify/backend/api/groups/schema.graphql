@@ -1,9 +1,20 @@
+type User
+  @model
+  @auth(rules: [
+    {allow: groups, groups: ["Admin"], queries: [get, list], mutations: [create, update, delete]},
+    {allow: owner}
+  ])
+{
+  id: ID!
+  name: String!
+  phone: String
+}
 type Rank
   @model 
   @auth(rules: [
-      {allow: groups, groups: ["Admin"], queries: [get, list], mutations: [create, update, delete]},
-      {allow: private, queries: [get, list], mutations: null}
-    ])
+    {allow: groups, groups: ["Admin"], queries: [get, list], mutations: [create, update, delete]},
+    {allow: private, queries: [get, list], mutations: null}
+  ])
 {
   id: ID!
   name: String!
@@ -12,11 +23,11 @@ type Rank
 type Result
   @model
   @auth(rules: [
-      {allow: groups, groups: ["Admin"], queries: [get, list], mutations: null},
-      {allow: owner}
-    ])
+    {allow: groups, groups: ["Admin"], queries: [get, list], mutations: [create, update, delete]},
+    {allow: owner}
+  ])
 {
   id: ID!
-  score: Float!
-  success: Int!
+  score: [Float]!
+  success: [Int]!
 }

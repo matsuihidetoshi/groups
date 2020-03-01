@@ -1,6 +1,36 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser($owner: String) {
+    onCreateUser(owner: $owner) {
+      id
+      name
+      phone
+      owner
+    }
+  }
+`;
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser($owner: String) {
+    onUpdateUser(owner: $owner) {
+      id
+      name
+      phone
+      owner
+    }
+  }
+`;
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser($owner: String) {
+    onDeleteUser(owner: $owner) {
+      id
+      name
+      phone
+      owner
+    }
+  }
+`;
 export const onCreateRank = /* GraphQL */ `
   subscription OnCreateRank {
     onCreateRank {
@@ -29,7 +59,7 @@ export const onDeleteRank = /* GraphQL */ `
   }
 `;
 export const onCreateResult = /* GraphQL */ `
-  subscription OnCreateResult($owner: String!) {
+  subscription OnCreateResult($owner: String) {
     onCreateResult(owner: $owner) {
       id
       score
@@ -39,7 +69,7 @@ export const onCreateResult = /* GraphQL */ `
   }
 `;
 export const onUpdateResult = /* GraphQL */ `
-  subscription OnUpdateResult($owner: String!) {
+  subscription OnUpdateResult($owner: String) {
     onUpdateResult(owner: $owner) {
       id
       score
@@ -49,7 +79,7 @@ export const onUpdateResult = /* GraphQL */ `
   }
 `;
 export const onDeleteResult = /* GraphQL */ `
-  subscription OnDeleteResult($owner: String!) {
+  subscription OnDeleteResult($owner: String) {
     onDeleteResult(owner: $owner) {
       id
       score
