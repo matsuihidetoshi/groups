@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Result from '@/components/Result.vue'
 import Rank from '@/components/Rank.vue'
 import SignIn from '@/components/SignIn.vue'
 
@@ -44,6 +45,12 @@ AmplifyEventBus.$on('authState', async (state) => {
 })
 
 const routes = [
+  {
+    path: '/results',
+    name: 'results',
+    component: Result,
+    meta: { requireAuth: true }
+  },
   {
     path: '/',
     name: 'rank',

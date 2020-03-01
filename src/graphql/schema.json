@@ -1086,7 +1086,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "score",
+          "name" : "scores",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1105,7 +1105,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "success",
+          "name" : "successes",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1189,7 +1189,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "score",
+          "name" : "scores",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1198,7 +1198,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "success",
+          "name" : "successes",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1984,7 +1984,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "score",
+          "name" : "scores",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -2001,7 +2001,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "success",
+          "name" : "successes",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -2027,7 +2027,7 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "score",
+          "name" : "scores",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2036,7 +2036,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "success",
+          "name" : "successes",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2102,7 +2102,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "score",
+          "name" : "scores",
           "description" : null,
           "type" : {
             "kind" : "LIST",
@@ -2115,7 +2115,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "success",
+          "name" : "successes",
           "description" : null,
           "type" : {
             "kind" : "LIST",
@@ -2312,6 +2312,25 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+        "kind" : "ENUM",
+        "name" : "ModelSortDirection",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : [ {
+          "name" : "ASC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "DESC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "possibleTypes" : null
+      }, {
         "kind" : "INPUT_OBJECT",
         "name" : "ModelBooleanInput",
         "description" : null,
@@ -2355,25 +2374,6 @@
         } ],
         "interfaces" : null,
         "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "ENUM",
-        "name" : "ModelSortDirection",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "ASC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "DESC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",

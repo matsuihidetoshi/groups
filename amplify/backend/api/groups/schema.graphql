@@ -28,6 +28,6 @@ type Result
   ])
 {
   id: ID!
-  score: [Float]!
-  success: [Int]!
+  scores: [Float]!
+  successes: [Int]!
 }

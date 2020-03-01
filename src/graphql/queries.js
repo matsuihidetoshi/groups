@@ -57,8 +57,8 @@ export const getResult = /* GraphQL */ `
   query GetResult($id: ID!) {
     getResult(id: $id) {
       id
-      score
-      success
+      scores
+      successes
       owner
     }
   }
@@ -72,8 +72,8 @@ export const listResults = /* GraphQL */ `
     listResults(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        score
-        success
+        scores
+        successes
         owner
       }
       nextToken

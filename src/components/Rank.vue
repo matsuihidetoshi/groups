@@ -1,6 +1,6 @@
 <template>
   <div class="rank">
-    <h1>Private Notes</h1>
+    <h1>Rank</h1>
     <div class="ranks-area">
       <div v-for="(rank, id) in ranks" v-bind:key="id">
         <div class="single-rank">

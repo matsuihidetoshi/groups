@@ -83,8 +83,8 @@ export const createResult = /* GraphQL */ `
   ) {
     createResult(input: $input, condition: $condition) {
       id
-      score
-      success
+      scores
+      successes
       owner
     }
   }
@@ -96,8 +96,8 @@ export const updateResult = /* GraphQL */ `
   ) {
     updateResult(input: $input, condition: $condition) {
       id
-      score
-      success
+      scores
+      successes
       owner
     }
   }
@@ -109,8 +109,8 @@ export const deleteResult = /* GraphQL */ `
   ) {
     deleteResult(input: $input, condition: $condition) {
       id
-      score
-      success
+      scores
+      successes
       owner
     }
   }

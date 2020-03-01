@@ -62,8 +62,8 @@ export const onCreateResult = /* GraphQL */ `
   subscription OnCreateResult($owner: String) {
     onCreateResult(owner: $owner) {
       id
-      score
-      success
+      scores
+      successes
       owner
     }
   }
@@ -72,8 +72,8 @@ export const onUpdateResult = /* GraphQL */ `
   subscription OnUpdateResult($owner: String) {
     onUpdateResult(owner: $owner) {
       id
-      score
-      success
+      scores
+      successes
       owner
     }
   }
@@ -82,8 +82,8 @@ export const onDeleteResult = /* GraphQL */ `
   subscription OnDeleteResult($owner: String) {
     onDeleteResult(owner: $owner) {
       id
-      score
-      success
+      scores
+      successes
       owner
     }
   }
