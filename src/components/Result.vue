@@ -1,6 +1,7 @@
 <template>
   <div class="result">
     <h1>Results</h1>
+    <h1>{{ groups }}</h1>
     <div class="results-area">
       <div v-for="(result, id) in results" v-bind:key="id">
         <div class="single-result">
@@ -36,7 +37,8 @@ export default {
       results: [],
       owner: localStorage.getItem("CognitoIdentityServiceProvider.1lj20khom343b67ou6f3se7bg6.LastAuthUser"),
       limit: 2 ** 31 - 1,
-      user: null
+      user: null,
+      groups: []
     }
   },
   mounted: function () {
@@ -70,7 +72,7 @@ export default {
         }
       })
       const user = await Auth.currentUserPoolUser(user)
-      console.log(user.signInUserSession.accessToken.payload)
+      this.groups = user.signInUserSession.accessToken.payload['cognito:groups']
     },
     singleResult: async function (selectedNote) {
       let result = await API.graphql(graphqlOperation(
