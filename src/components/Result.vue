@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import { API, graphqlOperation} from "aws-amplify"
+import { API, Auth, graphqlOperation} from "aws-amplify"
 import { createResult } from "../graphql/mutations"
 import { listResults } from "../graphql/queries"
 import { getResult } from "../graphql/queries"
@@ -35,7 +35,8 @@ export default {
       result: null,
       results: [],
       owner: localStorage.getItem("CognitoIdentityServiceProvider.1lj20khom343b67ou6f3se7bg6.LastAuthUser"),
-      limit: 2 ** 31 - 1
+      limit: 2 ** 31 - 1,
+      user: null
     }
   },
   mounted: function () {
@@ -68,6 +69,8 @@ export default {
           this.results = _.orderBy(results, 'id', 'desc').slice(0, 100)
         }
       })
+      const user = await Auth.currentUserPoolUser(user)
+      console.log(user.signInUserSession.accessToken.payload)
     },
     singleResult: async function (selectedNote) {
       let result = await API.graphql(graphqlOperation(
